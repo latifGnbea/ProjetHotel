@@ -25,13 +25,13 @@
                     </li>
                     <li class="xn-title">Navigation</li>
                     <li class="active">
-                        <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
-                    </li>                    
+                        <a href="?section=Accueil"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
+                    </li>                   
                     <li class="xn-openable">
-                        <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Pages</span></a>
+                        <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Administration</span></a>
                         <ul>
                             <li><a href="pages-gallery.html"><span class="fa fa-image"></span> Gallery</a></li>
-                            <li><a href="pages-profile.html"><span class="fa fa-user"></span> Profile</a></li>
+                            <li><a href="?section=Profile"><span class="fa fa-user"></span> Profile</a></li>
                             <li><a href="pages-address-book.html"><span class="fa fa-users"></span> Address Book</a></li>
                             <li class="xn-openable">
                                 <a href="#"><span class="fa fa-clock-o"></span> Timeline</a>

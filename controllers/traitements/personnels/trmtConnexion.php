@@ -22,5 +22,5 @@ foreach ($login as $infos) {
     $_SESSION['nomctrl'] = secureValueDecodeDB($infos['nom_pe']);
     $_SESSION['idctrl'] = secureValueDecodeDB($infos['id_pe']);
 }
-header('Location:?section=Profile');
+header('Location:?section=Accueil');
 //redirection

@@ -6,27 +6,15 @@ $password = secureGetPost($_POST['Password']);
 
 //traitements des donnees
 //email
-if (!secureEmail($username)) {
-    include('views/includes/head.php');
-    include('views/errorMsg/emailError.php');
-    include('views/includes/foot.php');
-}
-//password
-$taille = 2;
-$trmtPassword = password($password, $taille);
-if ($trmtPassword === false) {
-    include('views/includes/head.php');
-    include('views/errorMsg/pwError.php');
-    include('views/includes/foot.php');
-}
-$password = $trmtPassword;
 
+//password
+$password = cryptPassword($password);
 //verification de l'existence du username et son mot de passe
 $login = selectControlersByLoginAndPasswd($username, $password);
 if (isset($login) && empty($login) || !isset($login)) {
-    include('views/includes/head.php');
+    include('views/includes/header.php');
     include('views/errorMsg/connectError.php');
-    include('views/includes/foot.php');
+    die();
 }
 foreach ($login as $infos) {
     $_SESSION['emailctrl'] = secureValueDecodeDB($infos['email_pe']);

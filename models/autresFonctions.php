@@ -44,7 +44,7 @@ function secureEmail($mails)
 /**
  * Ajouté
  */
-function trmtPassword($password)
+function trmtPassword($password, int $taille)
 {
     /**
  * Doit être un minimum de 8 caractères
@@ -55,11 +55,15 @@ function trmtPassword($password)
     $uppercase = preg_match('@[A-Z]@', $password);
     $lowercase = preg_match('@[a-z]@', $password);
     $number    = preg_match('@[0-9]@', $password);
-    if (!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
+    if (!$uppercase || !$lowercase || !$number || strlen($password) < $taille) {
         return false;
     } else {
         return md5($password);
     }
+}
+
+function cryptPassword($password){
+    return md5($password);
 }
 
 function trmtTelephone($telephone){

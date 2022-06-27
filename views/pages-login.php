@@ -6,15 +6,15 @@
                 <div class="login-logo"></div>
                 <div class="login-body">
                     <div class="login-title"><strong>Welcome</strong>, Please login</div>
-                    <form action="index.html" class="form-horizontal" method="post">
+                    <form action="index.php?section=Personnel&amp;page=Connexion&amp;action=seConnecter" class="form-horizontal" method="post">
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Username"/>
+                            <input type="text" name="Username" class="form-control" placeholder="Username"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="password" class="form-control" placeholder="Password"/>
+                            <input type="password" name="Password" class="form-control" placeholder="Password"/>
                         </div>
                     </div>
                     <div class="form-group">

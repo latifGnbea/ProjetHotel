@@ -23,6 +23,14 @@ function secureValueDB($getpost)
     $elmt = htmlspecialchars($elmt);
     return $elmt;
 }
+function formatValideNom($nom){
+    $pattern  = '#[a-zA-Z]#';
+    if (preg_match($pattern,$nom)) {
+        return true;
+    }else{
+        return false;
+    }
+}
 
 function secureName($name)
 {

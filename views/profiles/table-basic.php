@@ -44,31 +44,26 @@
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th class="text-center">id</th>
+                                            <th class="text-center">titre</th>
+                                            <th class="text-center">options</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                        <?php foreach($infos as $k=>$profile) : ?>
+                                        <tr class="text-center">
+                                            <td><?=$k?></td>
+                                            <td><?=$profile->titre_pp?></td>
+                                            <td>
+                                                <button class="btn btn-rounded btn-default">
+                                                    <span class="fa fa-pencil"></span>
+                                                </button>
+                                                <button class="btn btn-rounded btn-danger">
+                                                    <span class="fa fa-times"></span>
+                                                </button>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
+                                        <?php endforeach ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -91,9 +86,9 @@
                                 <h5 class="modal-title" id="exampleModalLongTitle">Ajouter <b>nouveau profile</b> </h5>
                             </div>
                             <div class="modal-body">
-                                <form action="" method="post">
+                                <form action="?section=Profile&amp;page=Inscription&amp;action=nouveau" method="post">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="profile" name="profile" placeholder="Enter le profile">
+                                        <input type="text" class="form-control" id="profile" name="profile" placeholder="Enter le profile">
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-rounded btn-danger ">Ajouter</button>

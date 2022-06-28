@@ -56,10 +56,10 @@
                                             <td><?=$profile->titre_pp?></td>
                                             <td>
                                                 <button class="btn btn-rounded btn-default">
-                                                    <a class="fa fa-pencil"></a>
+                                                    <a href="?section=Profile&amp;page=Modification&amp;action=modifier&amp;id=<?=$profile->id_pp?>" class="fa fa-pencil"></a>
                                                 </button>
                                                 <button class="btn btn-rounded btn-danger">
-                                                    <a href="?section=Profile&amp;page=Suppression&amp;action=supprimer&amp;id=<?=$profile->id_pp?>" class="fa fa-times text-danger"></a>
+                                                    <a href="?section=Profile&amp;page=Suppression&amp;action=supprimer&amp;id=<?=$profile->id_pp?>" onclick="return confirm('Voulez-vous vraiment supprimer ce profile ?')" class="fa fa-times text-danger"></a>
                                                 </button>
                                             </td>
                                         </tr>

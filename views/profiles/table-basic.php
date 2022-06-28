@@ -1,4 +1,4 @@
-<body>
+
     <!-- START PAGE CONTAINER -->
     <div class="page-container">
 

@@ -55,18 +55,15 @@
       return $ajt;
   }
   //Modifier
-  function modifierUsers($id, $nomPrenoms,$email,$pass,$img){
+  function modifierUsers($id, $titre){
       include('models/dbconnect.php');
       $update= $bdd->prepare("UPDATE `profilepersonnel`
-      SET nomPrenoms = :nomPrenoms, email= :email,pass= :pass, img = :img
-      WHERE id=:ids");
-      $update->bindParam('nomPrenoms',$nomPrenoms, PDO::PARAM_STR);
-      $update->bindParam('email',$email, PDO::PARAM_STR);
-      $update->bindParam('pass',$pass, PDO::PARAM_STR);
-      $update->bindParam('img',$img, PDO::PARAM_STR);
-      $update->bindParam('ids',$id, PDO::PARAM_INT);
-      $update-> execute() or die(print_r($update_->errorInfo())); 
-      return $update_;
+      SET titre_pp = :titre
+      WHERE id_pp=:id");
+      $update->bindParam('titre',$titre, PDO::PARAM_STR);
+      $update->bindParam('id',$id, PDO::PARAM_INT);
+      $update-> execute() or die(print_r($update->errorInfo())); 
+      return $update;
 
   }
   //supprimer

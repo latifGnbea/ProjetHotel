@@ -9,6 +9,15 @@
       $liste = $element->fetchAll(PDO::FETCH_OBJ);
       return $liste;
   } 
+  //lecture
+  function selectAllUsersById($id){
+      include('models/dbconnect.php');
+      $element= $bdd->prepare("SELECT * FROM `profilepersonnel`  WHERE id_pp = :id");
+      $element->bindParam('id',$id, PDO::PARAM_STR);
+      $element-> execute() or die(print_r($element->errorInfo())); 
+      $liste = $element->fetchAll(PDO::FETCH_OBJ);
+      return $liste;
+  } 
   function selectAllUsersAscByNom(){
       include('models/dbconnect.php');
       $element= $bdd->prepare("SELECT * FROM `profilepersonnel` AS u
@@ -63,8 +72,8 @@
   //supprimer
   function supprimerUsers($id){
       include('models/dbconnect.php');
-      $sup= $bdd->prepare("DELETE FROM `profilepersonnel` WHERE id = :id");
-      $sup->bindParam('ids',$id, PDO::PARAM_INT);
+      $sup= $bdd->prepare("DELETE FROM `profilepersonnel` WHERE id_pp = :id");
+      $sup->bindParam('id',$id, PDO::PARAM_INT);
       $sup-> execute() or die(print_r($sup->errorInfo())); 
       return $sup;
   }

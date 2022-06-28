@@ -56,10 +56,10 @@
                                             <td><?=$profile->titre_pp?></td>
                                             <td>
                                                 <button class="btn btn-rounded btn-default">
-                                                    <span class="fa fa-pencil"></span>
+                                                    <a class="fa fa-pencil"></a>
                                                 </button>
                                                 <button class="btn btn-rounded btn-danger">
-                                                    <span class="fa fa-times"></span>
+                                                    <a href="?section=Profile&amp;page=Suppression&amp;action=supprimer&amp;id=<?=$profile->id_pp?>" class="fa fa-times text-danger"></a>
                                                 </button>
                                             </td>
                                         </tr>

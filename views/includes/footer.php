@@ -35,6 +35,7 @@
         <script type="text/javascript" src="assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
         <script type="text/javascript" src="assets/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
 
+        <script type="text/javascript" src="assets/js/plugins/datatables/jquery.dataTables.min.js"></script>  
         <script type="text/javascript" src="assets/js/demo_tables.js"></script> 
         
         <script type="text/javascript" src="assets/js/plugins/morris/raphael-min.js"></script>

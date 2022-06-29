@@ -24,7 +24,7 @@ function secureValueDB($getpost)
     return $elmt;
 }
 function formatValideNom($nom){
-    $pattern  = '#[a-zA-Zéèçùàôî]#';
+    $pattern  = '#[a-zA-Zéèçùàôî\'\- ]#';
     if (preg_match($pattern,$nom)) {
         return true;
     }else{

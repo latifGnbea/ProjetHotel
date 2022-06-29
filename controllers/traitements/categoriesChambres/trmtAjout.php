@@ -18,4 +18,9 @@ if (isset($verifCach) && !empty($verifCach)) {
     include_once('views/errorMsg/existeDeja.php');
 }
 //ajout dans la bd
+$ajoutCach = ajouterCategoriesChambre($categorieChambre);
+if (!isset($ajoutCach)) {
+    die('Echec de l\'ajout');
+}
 //redirection
+header('location:?section=CategoriesChambre');

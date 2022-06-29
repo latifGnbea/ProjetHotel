@@ -82,18 +82,11 @@
       return $liste;
   }
   //creation
-  function ajouterCategoriesChambre($nomPrenoms,$email,$pass,$tel,$cni,$pcni,$photo,$pp){
+  function ajouterCategoriesChambre($titre){
       include('models/dbconnect.php');
-      $ajt= $bdd->prepare("INSERT INTO `categoriechambre`(nomPrenoms_pe, email_pe, password_pe, telephone_pe, numCni_pe, photoCni_pe, photo_pe, inscriptionDate_pe,id_pp) 
-      VALUES(:nomPrenoms, :email, :pass, :tel, :cni, pcni, :photo, now(), :pp)");
-      $ajt->bindParam('nomPrenoms',$nomPrenoms, PDO::PARAM_STR);
-      $ajt->bindParam('email',$email, PDO::PARAM_STR);
-      $ajt->bindParam('pass',$pass, PDO::PARAM_STR);
-      $ajt->bindParam('tel',$tel, PDO::PARAM_STR);
-      $ajt->bindParam('cni',$cni, PDO::PARAM_STR);
-      $ajt->bindParam('pcni',$pcni, PDO::PARAM_STR);
-      $ajt->bindParam('photo',$photo, PDO::PARAM_STR);
-      $ajt->bindParam('pp',$pp, PDO::PARAM_STR);
+      $ajt= $bdd->prepare("INSERT INTO `categoriechambre`(titre_cach) 
+      VALUES(:nom)");
+      $ajt->bindParam('nom',$titre, PDO::PARAM_STR);
       $ajt-> execute() or die(print_r($ajt->errorInfo())); 
       return $ajt;
   }

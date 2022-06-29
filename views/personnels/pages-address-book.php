@@ -300,7 +300,7 @@
                     <h5 class="modal-title" id="exampleModalLongTitle">Ajouter Personnel</h5>
                 </div>
                 <div class="modal-body">
-                    <form id="jvalidate" method="POST" role="form" class="form-horizontal" action="?section=Personnel&amp;page=Inscription&amp;action=nouveau">
+                    <form id="jvalidate" method="POST" role="form" class="form-horizontal" action="?section=Personnel&amp;page=Inscription&amp;action=ajouter">
                         <div class="panel-body">
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Nom et prenom:</label>
@@ -371,9 +371,9 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Profile</label>
                                 <div class="col-md-9">
-                                    <select class="form-control select">
+                                    <select class="form-control" name="profile">
                                         <?php foreach ($infos as $profile) :  ?>
-                                            <option><?=$profile->titre_pp?></option>>
+                                            <option value="<?=$profile->id_pp?>"><?=$profile->titre_pp?></option>>
                                         <?php endforeach ?>
                                     </select>
                                     <!-- <span class="help-block">required date</span> -->

@@ -1,5 +1,6 @@
 <?php
-require('models/mesFonctions.php');
+include_once('models/autresFonctions.php');
+include_once('models/personnelsFonctions.php');
 //creations des variables
 $nomPrenom = secureGetPost($_POST['nomPrenom']);
 $email = secureGetPost($_POST['email']);
@@ -21,7 +22,7 @@ if (isset($verifEmail) && !empty($verifEmail)) {
 //format du password
 
 
-if (trmtPassword($password) === false) {
+if (trmtPassword($password,5) === false) {
     die('Format du mot de passe incorrecte');
 }
 
